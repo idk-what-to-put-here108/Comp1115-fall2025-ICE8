@@ -8,7 +8,7 @@ namespace ICE8
         {
             InitializeComponent();
         }
-        
+
         private void Button_Generate_Click(object sender, EventArgs e)
         {
             TextBox_AGL.Text = Roll5d10().ToString();
@@ -17,7 +17,13 @@ namespace ICE8
             TextBox_PER.Text = Roll5d10().ToString();
             TextBox_INT.Text = Roll5d10().ToString();
             TextBox_WIL.Text = Roll5d10().ToString();
-           
+
+        }
+        private void ComputeSecondaryAttributes()
+        {
+            TextBox_AWA.Text = (Convert.ToInt32(TextBox_AGL.Text) + Convert.ToInt32(TextBox_PER.Text)).ToString();
+            TextBox_TOU.Text = (Convert.ToInt32(TextBox_STR.Text) + Convert.ToInt32(TextBox_VGR.Text)).ToString();
+            TextBox_RES.Text = (Convert.ToInt32(TextBox_INT.Text) + Convert.ToInt32(TextBox_WIL.Text)).ToString();
         }
 
         /// <summary>
@@ -33,6 +39,11 @@ namespace ICE8
                 total += random.Next(1, 11);
             }
             return total;
+        }
+
+        private void comboBox_career_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
