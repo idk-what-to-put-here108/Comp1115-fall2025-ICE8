@@ -289,6 +289,7 @@
             TextBox_AWA.Size = new Size(35, 27);
             TextBox_AWA.TabIndex = 6;
             TextBox_AWA.TextAlign = HorizontalAlignment.Center;
+            TextBox_AWA.TextChanged += TextBox_AWA_TextChanged;
             // 
             // label_Res
             // 
@@ -344,7 +345,7 @@
             // 
             comboBox_career.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_career.FormattingEnabled = true;
-            comboBox_career.Items.AddRange(new object[] { "Army", "Psion", "Telepath", "Tinker", "Rougue" });
+            comboBox_career.Items.AddRange(new object[] { "Army", "Psion", "Telepath", "Rogue" });
             comboBox_career.Location = new Point(65, 87);
             comboBox_career.Name = "comboBox_career";
             comboBox_career.Size = new Size(121, 23);
