@@ -16,9 +16,9 @@ namespace ICE8
         int[][] CareerStats =
         [
             [35, 35, 30, 30, 25, 25], // Army
-     [30, 35, 30, 25, 35, 25], // Psion
-     [35, 30, 30, 35, 25, 25], // Rogue
-     [25, 30, 30, 35, 25, 35]  // Telepath
+            [30, 35, 30, 25, 35, 25], // Psion
+            [35, 30, 30, 35, 25, 25], // Rogue
+            [25, 30, 30, 35, 25, 35]  // Telepath
         ];
         TextBox[] PrimaryStatTextBoxes;
         TextBox[] SecondaryStatTextBoxes;
@@ -59,19 +59,19 @@ namespace ICE8
 
             ComputeSecondaryAttributes();
         }
-            private void ComputeSecondaryAttributes()
+        private void ComputeSecondaryAttributes()
         {
             TextBox_AWA.Text = (Convert.ToInt32(TextBox_AGL.Text) + Convert.ToInt32(TextBox_PER.Text)).ToString();
             TextBox_TOU.Text = (Convert.ToInt32(TextBox_STR.Text) + Convert.ToInt32(TextBox_VGR.Text)).ToString();
             TextBox_RES.Text = (Convert.ToInt32(TextBox_INT.Text) + Convert.ToInt32(TextBox_WIL.Text)).ToString();
         }
-        
+
 
         /// <summary>
         /// This method rolls 5d10 and returns the total
         /// </summary>
         /// <returns>An integer value between 5 and 50</returns>
-        
+
 
         int Roll6d10DropLowest()
         {
@@ -91,10 +91,20 @@ namespace ICE8
         }
         private void comboBox_career_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            if (comboBox_career.SelectedIndex < 0) { return; }
+            for (int attribute = 0; attribute < PrimaryStatTextBoxes.Length; attribute++)
+            {
+                PrimaryStatTextBoxes[attribute].Text = CareerStats[comboBox_career.SelectedIndex][attribute].ToString();
+            }
+            ComputeSecondaryAttributes();
         }
 
         private void TextBox_AWA_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Reset_Button_Click(object sender, EventArgs e)
         {
 
         }

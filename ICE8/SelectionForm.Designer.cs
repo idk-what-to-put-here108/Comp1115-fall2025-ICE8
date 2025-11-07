@@ -40,7 +40,7 @@
             TextBox_PER = new TextBox();
             TextBox_INT = new TextBox();
             TextBox_WIL = new TextBox();
-            Button_Generate = new Button();
+            Button_Random = new Button();
             PrimaryAttributes = new Panel();
             Primary_Attributes = new Label();
             panel1 = new Panel();
@@ -54,15 +54,23 @@
             textBox4 = new TextBox();
             Select_Career = new Label();
             comboBox_career = new ComboBox();
+            ShowRandomButton = new CheckBox();
+            SpeciesGroupBox = new GroupBox();
+            RadioButton_Alien = new RadioButton();
+            RadioButton_Robot = new RadioButton();
+            RadioButton_Human = new RadioButton();
+            Reset_Button = new Button();
+            Submit_Button = new Button();
             PrimaryAttributes.SuspendLayout();
             panel1.SuspendLayout();
+            SpeciesGroupBox.SuspendLayout();
             SuspendLayout();
             // 
             // Label_AGL
             // 
             Label_AGL.AutoSize = true;
             Label_AGL.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            Label_AGL.Location = new Point(55, 37);
+            Label_AGL.Location = new Point(13, 37);
             Label_AGL.Margin = new Padding(1, 0, 1, 0);
             Label_AGL.Name = "Label_AGL";
             Label_AGL.Size = new Size(36, 19);
@@ -73,7 +81,7 @@
             // 
             Label_STR.AutoSize = true;
             Label_STR.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            Label_STR.Location = new Point(126, 37);
+            Label_STR.Location = new Point(62, 37);
             Label_STR.Margin = new Padding(1, 0, 1, 0);
             Label_STR.Name = "Label_STR";
             Label_STR.Size = new Size(34, 19);
@@ -84,7 +92,7 @@
             // 
             Label_VGR.AutoSize = true;
             Label_VGR.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            Label_VGR.Location = new Point(195, 37);
+            Label_VGR.Location = new Point(109, 37);
             Label_VGR.Margin = new Padding(1, 0, 1, 0);
             Label_VGR.Name = "Label_VGR";
             Label_VGR.Size = new Size(37, 19);
@@ -95,7 +103,7 @@
             // 
             Label_PER.AutoSize = true;
             Label_PER.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            Label_PER.Location = new Point(267, 37);
+            Label_PER.Location = new Point(159, 37);
             Label_PER.Margin = new Padding(1, 0, 1, 0);
             Label_PER.Name = "Label_PER";
             Label_PER.Size = new Size(35, 19);
@@ -106,7 +114,7 @@
             // 
             Label_INT.AutoSize = true;
             Label_INT.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            Label_INT.Location = new Point(337, 37);
+            Label_INT.Location = new Point(207, 37);
             Label_INT.Margin = new Padding(1, 0, 1, 0);
             Label_INT.Name = "Label_INT";
             Label_INT.Size = new Size(32, 19);
@@ -117,7 +125,7 @@
             // 
             Label_WIL.AutoSize = true;
             Label_WIL.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            Label_WIL.Location = new Point(404, 37);
+            Label_WIL.Location = new Point(252, 37);
             Label_WIL.Margin = new Padding(1, 0, 1, 0);
             Label_WIL.Name = "Label_WIL";
             Label_WIL.Size = new Size(35, 19);
@@ -128,7 +136,7 @@
             // 
             TextBox_AGL.BorderStyle = BorderStyle.FixedSingle;
             TextBox_AGL.Font = new Font("Calibri", 12F);
-            TextBox_AGL.Location = new Point(55, 67);
+            TextBox_AGL.Location = new Point(13, 67);
             TextBox_AGL.Margin = new Padding(1, 0, 1, 0);
             TextBox_AGL.Name = "TextBox_AGL";
             TextBox_AGL.Size = new Size(35, 27);
@@ -139,7 +147,7 @@
             // 
             TextBox_STR.BorderStyle = BorderStyle.FixedSingle;
             TextBox_STR.Font = new Font("Calibri", 12F);
-            TextBox_STR.Location = new Point(126, 67);
+            TextBox_STR.Location = new Point(61, 67);
             TextBox_STR.Margin = new Padding(1, 0, 1, 0);
             TextBox_STR.Name = "TextBox_STR";
             TextBox_STR.Size = new Size(35, 27);
@@ -150,7 +158,7 @@
             // 
             TextBox_VGR.BorderStyle = BorderStyle.FixedSingle;
             TextBox_VGR.Font = new Font("Calibri", 12F);
-            TextBox_VGR.Location = new Point(195, 67);
+            TextBox_VGR.Location = new Point(109, 67);
             TextBox_VGR.Margin = new Padding(1, 0, 1, 0);
             TextBox_VGR.Name = "TextBox_VGR";
             TextBox_VGR.Size = new Size(35, 27);
@@ -161,7 +169,7 @@
             // 
             TextBox_PER.BorderStyle = BorderStyle.FixedSingle;
             TextBox_PER.Font = new Font("Calibri", 12F);
-            TextBox_PER.Location = new Point(267, 67);
+            TextBox_PER.Location = new Point(157, 67);
             TextBox_PER.Margin = new Padding(1, 0, 1, 0);
             TextBox_PER.Name = "TextBox_PER";
             TextBox_PER.Size = new Size(35, 27);
@@ -172,7 +180,7 @@
             // 
             TextBox_INT.BorderStyle = BorderStyle.FixedSingle;
             TextBox_INT.Font = new Font("Calibri", 12F);
-            TextBox_INT.Location = new Point(337, 67);
+            TextBox_INT.Location = new Point(205, 67);
             TextBox_INT.Margin = new Padding(1, 0, 1, 0);
             TextBox_INT.Name = "TextBox_INT";
             TextBox_INT.Size = new Size(35, 27);
@@ -183,25 +191,26 @@
             // 
             TextBox_WIL.BorderStyle = BorderStyle.FixedSingle;
             TextBox_WIL.Font = new Font("Calibri", 12F);
-            TextBox_WIL.Location = new Point(404, 67);
+            TextBox_WIL.Location = new Point(253, 67);
             TextBox_WIL.Margin = new Padding(1, 0, 1, 0);
             TextBox_WIL.Name = "TextBox_WIL";
             TextBox_WIL.Size = new Size(35, 27);
             TextBox_WIL.TabIndex = 11;
             TextBox_WIL.TextAlign = HorizontalAlignment.Center;
             // 
-            // Button_Generate
+            // Button_Random
             // 
-            Button_Generate.BackColor = SystemColors.ActiveCaption;
-            Button_Generate.Font = new Font("Calibri", 12F);
-            Button_Generate.Location = new Point(65, 401);
-            Button_Generate.Margin = new Padding(1, 0, 1, 0);
-            Button_Generate.Name = "Button_Generate";
-            Button_Generate.Size = new Size(92, 33);
-            Button_Generate.TabIndex = 12;
-            Button_Generate.Text = "Generate";
-            Button_Generate.UseVisualStyleBackColor = false;
-            Button_Generate.Click += Button_Generate_Click;
+            Button_Random.BackColor = Color.DodgerBlue;
+            Button_Random.Font = new Font("Calibri", 12F);
+            Button_Random.ForeColor = SystemColors.ButtonHighlight;
+            Button_Random.Location = new Point(133, 376);
+            Button_Random.Margin = new Padding(1, 0, 1, 0);
+            Button_Random.Name = "Button_Random";
+            Button_Random.Size = new Size(92, 33);
+            Button_Random.TabIndex = 12;
+            Button_Random.Text = "Random";
+            Button_Random.UseVisualStyleBackColor = false;
+            Button_Random.Click += Button_Generate_Click;
             // 
             // PrimaryAttributes
             // 
@@ -218,16 +227,16 @@
             PrimaryAttributes.Controls.Add(Label_VGR);
             PrimaryAttributes.Controls.Add(Label_STR);
             PrimaryAttributes.Controls.Add(Label_AGL);
-            PrimaryAttributes.Location = new Point(65, 116);
+            PrimaryAttributes.Location = new Point(21, 116);
             PrimaryAttributes.Name = "PrimaryAttributes";
-            PrimaryAttributes.Size = new Size(500, 116);
+            PrimaryAttributes.Size = new Size(317, 116);
             PrimaryAttributes.TabIndex = 13;
             // 
             // Primary_Attributes
             // 
             Primary_Attributes.AutoSize = true;
             Primary_Attributes.BorderStyle = BorderStyle.FixedSingle;
-            Primary_Attributes.Location = new Point(56, 10);
+            Primary_Attributes.Location = new Point(13, 11);
             Primary_Attributes.Name = "Primary_Attributes";
             Primary_Attributes.Size = new Size(105, 17);
             Primary_Attributes.TabIndex = 12;
@@ -242,16 +251,16 @@
             panel1.Controls.Add(label_Res);
             panel1.Controls.Add(Label_tou);
             panel1.Controls.Add(label_AWA);
-            panel1.Location = new Point(65, 247);
+            panel1.Location = new Point(21, 238);
             panel1.Name = "panel1";
-            panel1.Size = new Size(287, 122);
+            panel1.Size = new Size(175, 122);
             panel1.TabIndex = 14;
             // 
             // Secondary_attributes
             // 
             Secondary_attributes.AutoSize = true;
             Secondary_attributes.BorderStyle = BorderStyle.FixedSingle;
-            Secondary_attributes.Location = new Point(56, 10);
+            Secondary_attributes.Location = new Point(13, 10);
             Secondary_attributes.Name = "Secondary_attributes";
             Secondary_attributes.Size = new Size(119, 17);
             Secondary_attributes.TabIndex = 12;
@@ -261,7 +270,7 @@
             // 
             TextBox_RES.BorderStyle = BorderStyle.FixedSingle;
             TextBox_RES.Font = new Font("Calibri", 12F);
-            TextBox_RES.Location = new Point(195, 67);
+            TextBox_RES.Location = new Point(97, 67);
             TextBox_RES.Margin = new Padding(1, 0, 1, 0);
             TextBox_RES.Name = "TextBox_RES";
             TextBox_RES.Size = new Size(35, 27);
@@ -272,7 +281,7 @@
             // 
             TextBox_TOU.BorderStyle = BorderStyle.FixedSingle;
             TextBox_TOU.Font = new Font("Calibri", 12F);
-            TextBox_TOU.Location = new Point(126, 67);
+            TextBox_TOU.Location = new Point(55, 67);
             TextBox_TOU.Margin = new Padding(1, 0, 1, 0);
             TextBox_TOU.Name = "TextBox_TOU";
             TextBox_TOU.Size = new Size(35, 27);
@@ -283,7 +292,7 @@
             // 
             TextBox_AWA.BorderStyle = BorderStyle.FixedSingle;
             TextBox_AWA.Font = new Font("Calibri", 12F);
-            TextBox_AWA.Location = new Point(55, 67);
+            TextBox_AWA.Location = new Point(13, 67);
             TextBox_AWA.Margin = new Padding(1, 0, 1, 0);
             TextBox_AWA.Name = "TextBox_AWA";
             TextBox_AWA.Size = new Size(35, 27);
@@ -295,7 +304,7 @@
             // 
             label_Res.AutoSize = true;
             label_Res.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            label_Res.Location = new Point(195, 37);
+            label_Res.Location = new Point(97, 37);
             label_Res.Margin = new Padding(1, 0, 1, 0);
             label_Res.Name = "label_Res";
             label_Res.Size = new Size(34, 19);
@@ -306,7 +315,7 @@
             // 
             Label_tou.AutoSize = true;
             Label_tou.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            Label_tou.Location = new Point(126, 37);
+            Label_tou.Location = new Point(57, 37);
             Label_tou.Margin = new Padding(1, 0, 1, 0);
             Label_tou.Name = "Label_tou";
             Label_tou.Size = new Size(38, 19);
@@ -317,7 +326,7 @@
             // 
             label_AWA.AutoSize = true;
             label_AWA.Font = new Font("Calibri", 12F, FontStyle.Bold);
-            label_AWA.Location = new Point(55, 37);
+            label_AWA.Location = new Point(13, 37);
             label_AWA.Margin = new Padding(1, 0, 1, 0);
             label_AWA.Name = "label_AWA";
             label_AWA.Size = new Size(42, 19);
@@ -326,7 +335,7 @@
             // 
             // textBox4
             // 
-            textBox4.Location = new Point(65, 27);
+            textBox4.Location = new Point(21, 26);
             textBox4.Name = "textBox4";
             textBox4.Size = new Size(100, 23);
             textBox4.TabIndex = 15;
@@ -335,7 +344,7 @@
             // Select_Career
             // 
             Select_Career.AutoSize = true;
-            Select_Career.Location = new Point(65, 69);
+            Select_Career.Location = new Point(21, 69);
             Select_Career.Name = "Select_Career";
             Select_Career.Size = new Size(75, 15);
             Select_Career.TabIndex = 16;
@@ -345,30 +354,117 @@
             // 
             comboBox_career.DropDownStyle = ComboBoxStyle.DropDownList;
             comboBox_career.FormattingEnabled = true;
-            comboBox_career.Items.AddRange(new object[] { "Army", "Psion", "Telepath", "Rogue" });
-            comboBox_career.Location = new Point(65, 87);
+            comboBox_career.Items.AddRange(new object[] { "Army", "Psion", "Rogue", "Telepath" });
+            comboBox_career.Location = new Point(21, 87);
             comboBox_career.Name = "comboBox_career";
             comboBox_career.Size = new Size(121, 23);
             comboBox_career.TabIndex = 17;
             comboBox_career.SelectedIndexChanged += comboBox_career_SelectedIndexChanged;
             // 
+            // ShowRandomButton
+            // 
+            ShowRandomButton.AutoSize = true;
+            ShowRandomButton.Checked = true;
+            ShowRandomButton.CheckState = CheckState.Checked;
+            ShowRandomButton.Location = new Point(165, 91);
+            ShowRandomButton.Name = "ShowRandomButton";
+            ShowRandomButton.Size = new Size(147, 19);
+            ShowRandomButton.TabIndex = 18;
+            ShowRandomButton.Text = "Show Random Button?";
+            ShowRandomButton.UseVisualStyleBackColor = true;
+            // 
+            // SpeciesGroupBox
+            // 
+            SpeciesGroupBox.Controls.Add(RadioButton_Alien);
+            SpeciesGroupBox.Controls.Add(RadioButton_Robot);
+            SpeciesGroupBox.Controls.Add(RadioButton_Human);
+            SpeciesGroupBox.Location = new Point(202, 238);
+            SpeciesGroupBox.Name = "SpeciesGroupBox";
+            SpeciesGroupBox.Size = new Size(136, 122);
+            SpeciesGroupBox.TabIndex = 19;
+            SpeciesGroupBox.TabStop = false;
+            SpeciesGroupBox.Text = "Species";
+            // 
+            // RadioButton_Alien
+            // 
+            RadioButton_Alien.AutoSize = true;
+            RadioButton_Alien.Location = new Point(20, 78);
+            RadioButton_Alien.Name = "RadioButton_Alien";
+            RadioButton_Alien.Size = new Size(52, 19);
+            RadioButton_Alien.TabIndex = 2;
+            RadioButton_Alien.Text = "Alien";
+            RadioButton_Alien.UseVisualStyleBackColor = true;
+            // 
+            // RadioButton_Robot
+            // 
+            RadioButton_Robot.AutoSize = true;
+            RadioButton_Robot.Location = new Point(20, 53);
+            RadioButton_Robot.Name = "RadioButton_Robot";
+            RadioButton_Robot.Size = new Size(57, 19);
+            RadioButton_Robot.TabIndex = 1;
+            RadioButton_Robot.Text = "Robot";
+            RadioButton_Robot.UseVisualStyleBackColor = true;
+            // 
+            // RadioButton_Human
+            // 
+            RadioButton_Human.AutoSize = true;
+            RadioButton_Human.Checked = true;
+            RadioButton_Human.Location = new Point(20, 28);
+            RadioButton_Human.Name = "RadioButton_Human";
+            RadioButton_Human.Size = new Size(65, 19);
+            RadioButton_Human.TabIndex = 0;
+            RadioButton_Human.TabStop = true;
+            RadioButton_Human.Text = "Human";
+            RadioButton_Human.UseVisualStyleBackColor = true;
+            // 
+            // Reset_Button
+            // 
+            Reset_Button.BackColor = Color.Orange;
+            Reset_Button.Font = new Font("Calibri", 12F);
+            Reset_Button.Location = new Point(21, 376);
+            Reset_Button.Margin = new Padding(1, 0, 1, 0);
+            Reset_Button.Name = "Reset_Button";
+            Reset_Button.Size = new Size(92, 33);
+            Reset_Button.TabIndex = 20;
+            Reset_Button.Text = "Reset";
+            Reset_Button.UseVisualStyleBackColor = false;
+            Reset_Button.Click += Reset_Button_Click;
+            // 
+            // Submit_Button
+            // 
+            Submit_Button.BackColor = Color.LimeGreen;
+            Submit_Button.Font = new Font("Calibri", 12F);
+            Submit_Button.Location = new Point(245, 376);
+            Submit_Button.Margin = new Padding(1, 0, 1, 0);
+            Submit_Button.Name = "Submit_Button";
+            Submit_Button.Size = new Size(92, 33);
+            Submit_Button.TabIndex = 21;
+            Submit_Button.Text = "Submit";
+            Submit_Button.UseVisualStyleBackColor = false;
+            // 
             // SelectionForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(627, 482);
+            ClientSize = new Size(384, 428);
+            Controls.Add(SpeciesGroupBox);
+            Controls.Add(ShowRandomButton);
             Controls.Add(comboBox_career);
             Controls.Add(Select_Career);
             Controls.Add(textBox4);
             Controls.Add(panel1);
             Controls.Add(PrimaryAttributes);
-            Controls.Add(Button_Generate);
+            Controls.Add(Button_Random);
+            Controls.Add(Submit_Button);
+            Controls.Add(Reset_Button);
             Name = "SelectionForm";
             Text = "Selection Form";
             PrimaryAttributes.ResumeLayout(false);
             PrimaryAttributes.PerformLayout();
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
+            SpeciesGroupBox.ResumeLayout(false);
+            SpeciesGroupBox.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -387,7 +483,7 @@
         private TextBox TextBox_PER;
         private TextBox TextBox_INT;
         private TextBox TextBox_WIL;
-        private Button Button_Generate;
+        private Button Button_Random;
         private Panel PrimaryAttributes;
         private Label Primary_Attributes;
         private Panel panel1;
@@ -407,5 +503,12 @@
         private TextBox textBox4;
         private Label Select_Career;
         private ComboBox comboBox_career;
+        private CheckBox ShowRandomButton;
+        private GroupBox SpeciesGroupBox;
+        private RadioButton RadioButton_Alien;
+        private RadioButton RadioButton_Robot;
+        private RadioButton RadioButton_Human;
+        private Button Reset_Button;
+        private Button Submit_Button;
     }
 }
