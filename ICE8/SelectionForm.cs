@@ -52,9 +52,14 @@ namespace ICE8
 
         private void Button_Generate_Click(object sender, EventArgs e)
         {
-            foreach (var stat in PrimaryStatTextBoxes)
+            DialogResult result = MessageBox.Show("Random generation is destructive, Are you sure?", "Confirm Random", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
             {
-                stat.Text = Roll6d10DropLowest().ToString();
+                foreach (var stat in PrimaryStatTextBoxes)
+                {
+                    stat.Text = Roll6d10DropLowest().ToString();
+                }
+
             }
 
             ComputeSecondaryAttributes();
