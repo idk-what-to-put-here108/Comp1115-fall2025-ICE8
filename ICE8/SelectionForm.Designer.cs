@@ -442,6 +442,7 @@
             Submit_Button.TabIndex = 21;
             Submit_Button.Text = "Submit";
             Submit_Button.UseVisualStyleBackColor = false;
+            Submit_Button.Click += Submit_Button_Click;
             // 
             // SelectionForm
             // 

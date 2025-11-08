@@ -138,6 +138,11 @@ namespace ICE8
                 Button_Random.Hide();
             }
         }
+
+        private void Submit_Button_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }
 
