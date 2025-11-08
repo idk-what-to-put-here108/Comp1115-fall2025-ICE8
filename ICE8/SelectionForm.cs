@@ -126,6 +126,18 @@ namespace ICE8
                 }
             }
         }
+
+        private void ShowRandomButton_CheckedChanged(object sender, EventArgs e)
+        {
+            if (ShowRandomButton.Checked)
+            {
+                Button_Random.Show();
+            }
+            else
+            {
+                Button_Random.Hide();
+            }
+        }
     }
 }
 

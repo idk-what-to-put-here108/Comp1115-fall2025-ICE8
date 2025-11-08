@@ -372,6 +372,7 @@
             ShowRandomButton.TabIndex = 18;
             ShowRandomButton.Text = "Show Random Button?";
             ShowRandomButton.UseVisualStyleBackColor = true;
+            ShowRandomButton.CheckedChanged += ShowRandomButton_CheckedChanged;
             // 
             // SpeciesGroupBox
             // 
