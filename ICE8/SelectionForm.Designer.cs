@@ -457,7 +457,9 @@
             Controls.Add(Button_Random);
             Controls.Add(Submit_Button);
             Controls.Add(Reset_Button);
+            MaximizeBox = false;
             Name = "SelectionForm";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Selection Form";
             PrimaryAttributes.ResumeLayout(false);
             PrimaryAttributes.PerformLayout();

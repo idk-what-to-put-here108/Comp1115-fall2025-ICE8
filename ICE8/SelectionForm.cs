@@ -111,7 +111,20 @@ namespace ICE8
 
         private void Reset_Button_Click(object sender, EventArgs e)
         {
+            DialogResult result = MessageBox.Show("Are you sure?", "Confirm Reset", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            if (result == DialogResult.OK)
+            {
+                comboBox_career.SelectedIndex = -1;
+                foreach (var stat in PrimaryStatTextBoxes)
+                {
+                    stat.Text = string.Empty;
+                }
 
+                foreach (var stat in SecondaryStatTextBoxes)
+                {
+                    stat.Text = string.Empty;
+                }
+            }
         }
     }
 }
